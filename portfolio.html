@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | OM Wedding Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#111;
+color:#fff;
+text-align:center;
+}
+
+h1{
+letter-spacing:8px;
+margin:40px 0;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:40px;
+}
+
+.card{
+position:relative;
+overflow:hidden;
+border-radius:15px;
+cursor:pointer;
+}
+
+.card img{
+width:100%;
+height:250px;
+object-fit:cover;
+transition:0.5s;
+}
+
+.card:hover img{
+transform:scale(1.1);
+}
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:20px;
+letter-spacing:3px;
+}
+
+/* HEADER NAVBAR */
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 50px;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(6px);
+z-index:1000;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-size:13px;
+letter-spacing:2px;
+transition:0.3s;
+}
+
+.navbar a:hover{
+color:#d4af37;
+}
+
+.nav-center img{
+width:55px;
+}
+
+/* PUSH CONTENT DOWN (important) */
+body{
+margin-top:80px;
+}
+</style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+<nav class="navbar">
+
+  <div>
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="portfolio.html">PORTFOLIO +</a>
+  </div>
+
+  <div class="nav-center">
+    <a href="index.html">
+      <img src="image/ows logo.jpeg" alt="OM Wedding Studio">
+    </a>
+  </div>
+
+  <div>
+    <a href="films.html">WEDDING FILMS</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
+
+</nav>
+
+<h1>PORTFOLIO +</h1>
+
+<div class="grid">
+
+<a href="portraits.html" class="card">
+<img src="image/portrait.jpg">
+<div class="overlay">PORTRAITS</div>
+</a>
+
+<a href="prewedding.html" class="card">
+<img src="image/prewed.jpg">
+<div class="overlay">PRE WEDDINGS</div>
+</a>
+
+<a href="tamil.html" class="card">
+<img src="image/tamil.jpg">
+<div class="overlay">TAMIL WEDDINGS</div>
+</a>
+
+<a href="telugu.html" class="card">
+<img src="image/telugu.jpg">
+<div class="overlay">TELUGU WEDDINGS</div>
+</a>
+
+<a href="brahmin.html" class="card">
+<img src="image/brahmin.jpg">
+<div class="overlay">BRAHMIN WEDDINGS</div>
+</a>
+
+<a href="christian.html" class="card">
+<img src="image/christian.jpg">
+<div class="overlay">CHRISTIAN WEDDINGS</div>
+</a>
+
+<a href="muslim.html" class="card">
+<img src="image/muslim.jpg">
+<div class="overlay">MUSLIM WEDDINGS</div>
+</a>
+
+<a href="engagement.html" class="card">
+<img src="image/engagement.jpg">
+<div class="overlay">ENGAGEMENT</div>
+</a>
+
+</div>
+
+
+
+</body>
+</html>

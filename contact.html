@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | OM Wedding Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Poppins',sans-serif;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* 🎬 VIDEO BACKGROUND */
+.bg-video{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-2;
+overflow:hidden;
+}
+
+.bg-video video{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* DARK OVERLAY */
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.75);
+z-index:-1;
+}
+
+/* CONTENT */
+.container{
+max-width:1000px;
+margin:auto;
+padding:60px 20px;
+}
+
+h1{
+text-align:center;
+margin-bottom:20px;
+font-size:40px;
+}
+
+p{
+text-align:center;
+margin-bottom:30px;
+opacity:0.9;
+}
+
+/* FORM */
+form{
+display:grid;
+gap:15px;
+}
+
+input, textarea{
+padding:12px;
+border:none;
+border-radius:8px;
+outline:none;
+}
+
+textarea{
+height:120px;
+resize:none;
+}
+
+button{
+background:#d4af37;
+color:#000;
+padding:12px;
+border:none;
+border-radius:25px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#fff;
+}
+
+/* INFO SECTION */
+.info{
+margin-top:40px;
+text-align:center;
+line-height:1.8;
+}
+
+.info h3{
+color:#d4af37;
+margin-bottom:10px;
+}
+
+/* BACK BUTTON */
+.back{
+position:fixed;
+top:20px;
+left:20px;
+background:#000;
+padding:10px 20px;
+border-radius:20px;
+text-decoration:none;
+color:#fff;
+}
+
+.logo-container{
+text-align:center;
+margin-bottom:20px;
+}
+
+.logo-container img{
+width:250px;
+animation:spinLogo 8s;
+filter:drop-shadow(0 0 5px gold);
+transition:0.5s;
+}
+
+.logo-container img:hover{
+transform:scale(1.1) rotate(360deg);
+}
+
+
+
+
+@keyframes popupFade{
+from{transform:scale(0.7);opacity:0}
+to{transform:scale(1);opacity:1}
+}
+
+.bg-video{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-2;
+}
+
+.bg-video video{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* DARK OVERLAY */
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.75);
+z-index:-1;
+}
+
+/* NAVBAR */
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 50px;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(5px);
+z-index:1000;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-size:13px;
+letter-spacing:2px;
+}
+
+.navbar a:hover{
+color:#d4af37;
+}
+
+.nav-center img{
+width:55px;
+}
+
+
+
+</style>
+
+
+
+
+<div class="logo-container">
+  <img src="image/ows logo.jpeg" alt="OM Wedding Studio Logo">
+</div>
+</head>
+
+
+
+
+<div id="popup" style="
+position:fixed;
+bottom:30px;
+left:50%;
+transform:translateX(-50%);
+background:#111;
+color:#fff;
+padding:15px 25px;
+border-radius:30px;
+box-shadow:0 0 15px rgba(212,175,55,0.6);
+display:none;
+z-index:9999;
+font-size:16px;
+">
+✅ Successfully submitted! We will contact you soon.
+</div>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  // Get values
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let email = document.getElementById("email").value || "Not Provided";
+  let location = document.getElementById("location").value || "Not Provided";
+  let details = document.getElementById("details").value || "Not Provided";
+
+  // WhatsApp message
+  let message = `Hi OM Wedding Studio,%0A%0AEnquiry Details:%0A
+Name: ${name}%0A
+Phone: ${phone}%0A
+Email: ${email}%0A
+Location: ${location}%0A
+Details: ${details}`;
+
+  let whatsappURL = "https://wa.me/916383524928?text=" + message;
+
+  // SHOW POPUP
+  let popup = document.getElementById("popup");
+  popup.style.display = "block";
+
+  // OPEN WHATSAPP AFTER DELAY
+  setTimeout(() => {
+    window.open(whatsappURL, "_blank");
+  }, 1000);
+
+  // HIDE POPUP
+  setTimeout(() => {
+    popup.style.display = "none";
+  }, 4000);
+
+});
+</script>
+
+
+<body>
+
+
+
+
+<!-- 🎬 VIDEO -->
+<div class="bg-video">
+<video autoplay muted loop>
+<source src="video/vdo1.mp4" type="video/mp4">
+</video>
+</div>
+
+<div class="overlay"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div>
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="portfolio.html">PORTFOLIO +</a>
+  </div>
+
+  <div class="nav-center">
+    <img src="image/ows logo.jpeg">
+  </div>
+
+  <div>
+    <a href="films.html">WEDDING FILMS</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
+</nav>
+
+<!-- DARK OVERLAY -->
+<div class="overlay"></div>
+
+
+
+<div class="container">
+
+<h1>Get in Touch with Us</h1>
+
+<p>
+We’d love to hear from you! Whether you're planning your big day or have questions, we’re here to help.
+</p>
+
+<form id="contactForm">
+
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="tel" id="phone" placeholder="+91 Phone Number" required>
+<input type="email" id="email" placeholder="Email Address (Optional)">
+<input type="text" id="location" placeholder="Event Location (Optional)">
+<textarea id="details" placeholder="Event Details (Optional)"></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+
+
+<form id="contactForm">
+
+<div class="info">
+<h3>📞 Phone</h3>
+<p>+91 87783 87443</p>
+
+<h3>📍 Location</h3>
+<p>
+1st Floor, No.148, Velachery Main Rd,<br>
+Pallikaranai, Chennai, Tamil Nadu 600100
+</p>
+
+<h3>⏰ Business Hours</h3>
+<p>9:00 AM to 9:00 PM</p>
+
+<h3>📧 Email</h3>
+<p>omweddingstudio978@gmail.com</p>
+
+<h3>📸 Instagram</h3>
+<p>@OMWEDDINGSTUDIO</p>
+</div>
+
+</div>
+
+
+
+</body>
+</html>

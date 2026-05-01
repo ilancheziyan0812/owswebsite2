@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OM Wedding Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden}
+
+header{
+height:100vh;
+position:relative;
+background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.95)),url('img1.webp') center/cover no-repeat;
+display:flex;align-items:center;justify-content:center;text-align:center;
+animation:zoom 10s ease infinite alternate;
+overflow:hidden;
+}
+
+header video{
+position:absolute;
+top:0;left:0;
+width:100%;height:100%;
+object-fit:cover;
+z-index:-1;
+opacity:0.5;
+}
+
+@keyframes zoom{
+0%{background-size:100%}
+100%{background-size:110%}
+}
+
+h1{font-family:'Playfair Display',serif;font-size:70px;letter-spacing:4px}
+p{font-size:18px;opacity:.8}
+
+.btn{
+margin-top:20px;
+padding:12px 30px;
+border:1px solid gold;
+color:gold;
+text-decoration:none;
+border-radius:30px;
+transition:.4s;
+}
+.btn:hover{background:gold;color:#000}
+
+section{padding:80px 10%}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.gallery img{
+width:100%;
+height:380px;
+object-fit:cover;
+border-radius:20px;
+transition:.5s;
+}
+
+.gallery img:hover{
+transform:scale(1.08);
+box-shadow:0 20px 40px rgba(0,0,0,0.6);
+}
+
+.stats{
+display:flex;
+justify-content:space-around;
+flex-wrap:wrap;
+text-align:center;
+background:#111;
+padding:60px 20px;
+}
+
+.stat h2{
+font-size:45px;
+color:#d4af37;
+font-family:'Playfair Display';
+}
+
+.video iframe{
+width:100%;
+height:500px;
+border-radius:20px;
+box-shadow:0 10px 40px rgba(0,0,0,.5);
+}
+
+.contact{
+text-align:center;
+}
+
+.contact a{
+color:gold;
+text-decoration:none;
+font-size:18px;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#000;
+font-size:14px;
+opacity:.7;
+}
+
+
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
+
+#loader img{
+width:120px;
+animation:rotateLogo 3s linear infinite;
+}
+
+@keyframes rotateLogo{
+0%{transform:rotate(0deg)}
+100%{transform:rotate(360deg)}
+}
+
+
+#callBtn:hover, #whatsappBtn:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px rgba(0,255,100,0.8);
+}
+
+
+#callBtn:hover, #whatsappBtn:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px rgba(0,255,100,0.8);
+}
+
+@keyframes pulseGlow{
+0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
+70%{box-shadow:0 0 0 20px rgba(37,211,102,0);}
+100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+}
+
+#whatsappBtn{
+animation:pulseGlow 1s infinite;
+}
+
+#callBtn{
+animation:pulseGlow 1s infinite;
+}
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 50px;
+z-index:1000;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(5px);
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-size:14px;
+letter-spacing:2px;
+transition:0.3s;
+}
+
+.navbar a:hover{
+color:#d4af37;
+}
+
+.nav-left, .nav-right{
+display:flex;
+align-items:center;
+}
+
+.nav-center img{
+width:60px;
+filter:drop-shadow(0 0 5px gold);
+}
+
+header{
+margin-top:60px;
+}
+
+</style>
+</head>
+<script>
+window.addEventListener("load", function(){
+  setTimeout(()=>{
+    document.getElementById("loader").style.opacity="0";
+    document.getElementById("loader").style.transition="0.8s";
+    setTimeout(()=>{
+      document.getElementById("loader").style.display="none";
+    },800);
+  },1500); // loading delay time
+});
+
+
+
+
+
+</script>
+
+<a href="contact.html" style="
+position:absolute;
+top:20px;
+right:30px;
+color:white;
+text-decoration:none;
+font-size:18px;
+border:1px solid gold;
+padding:8px 20px;
+border-radius:25px;
+transition:0.3s;
+z-index:1000;
+">
+Contact
+</a>
+
+<body>
+  <!-- NAVBAR START -->
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="portfolio.html">PORTFOLIO +</a>
+  </div>
+
+  <div class="nav-center">
+    <img src="image/ows logo.jpeg" alt="Logo">
+  </div>
+
+  <div class="nav-right">
+    <a href="films.html">WEDDING FILMS</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
+</nav>
+
+<header>
+<video autoplay muted loop>
+<source src="video/vdo1.mp4" type="video/mp4">
+</video>
+<div>
+<h1>OM Wedding Studio</h1>
+<p>Crafting Timeless Wedding Stories</p><br>
+<a href="#gallery" class="btn">Explore Work</a>
+</div>
+
+
+
+</header>
+
+<section style="padding:60px 10%;text-align:center;">
+<h2 style="font-family:Playfair Display;color:gold;margin-bottom:20px">Our Story Through Lens</h2>
+<p style="max-width:900px;margin:auto;font-size:18px;line-height:1.8;opacity:.85">
+Step into the world of OM Wedding Studio, where every frame is crafted with passion and precision. From vibrant South Indian weddings to elegant pre-wedding shoots and cinematic storytelling, we capture emotions that last forever. Our portfolio reflects love, culture, and unforgettable moments, designed to turn your special day into timeless memories. Let our visuals inspire your dream wedding journey.
+</p>
+</section>
+
+<section id="gallery">
+<h2 style="text-align:center;font-family:Playfair Display;margin-bottom:40px">Our Signature Work</h2>
+<div class="gallery" id="slider">
+<div class="slide"><img src="image/img1.webp"><h3>Baby Shower</h3></div>
+<div class="slide"><img src="image/img2.webp"><h3>Baby Shoot</h3></div>
+<div class="slide"><img src="image/img3.webp"><h3>Haldi Function</h3></div>
+<div class="slide"><img src="image/img4.webp"><h3>Pre Wedding Shoot</h3></div>
+<div class="slide"><img src="image/img1.webp"><h3>Post Wedding Shoot</h3></div>
+<div class="slide"><img src="image/img2.webp"><h3>Reception</h3></div>
+<div class="slide"><img src="image/img3.webp"><h3>Marriage</h3></div>
+<div class="slide"><img src="image/img4.webp"><h3>Instagram Trend Reel</h3></div>
+</div>
+
+<style>
+.gallery{position:relative;overflow:hidden;height:400px}
+.slide{position:absolute;width:100%;height:100%;opacity:0;transition:1s}
+.slide img{width:100%;height:100%;object-fit:cover;border-radius:20px}
+.slide h3{position:absolute;bottom:20px;left:30px;font-size:28px;font-family:'Playfair Display';color:#fff;background:rgba(0,0,0,0.5);padding:10px 20px;border-radius:10px}
+.slide.active{opacity:1}
+</style>
+
+<script>
+let slides=document.querySelectorAll('.slide');
+let index=0;
+function showSlide(){
+ slides.forEach(s=>s.classList.remove('active'));
+ slides[index].classList.add('active');
+ index=(index+1)%slides.length;
+}
+showSlide();
+setInterval(showSlide,3000);
+</script>
+</section>
+
+<section class="stats">
+<div class="stat"><h2>500+</h2><p>Projects Completed</p></div>
+<div class="stat"><h2>20</h2><p>Expert Team</p></div>
+<div class="stat"><h2>2</h2><p>Branches in India</p></div>
+</section>
+
+<section class="video">
+<h2 style="text-align:center;font-family:Playfair Display;margin-bottom:30px">Cinematic Wedding Films</h2>
+<iframe src="https://www.youtube.com/embed/mEtGQOTrsU4?autoplay=1&mute=1" allowfullscreen>
+</iframe>
+</section>
+
+<section class="contact">
+<h2 style="font-family:Playfair Display">Book Your Dream Wedding</h2>
+<p>Contact us directly on WhatsApp for instant booking</p>
+<a href="https://wa.me/918778387443">Chat on WhatsApp</a>
+</section>
+
+<section style="text-align:center;padding:40px;background:#111;">
+<h2 style="font-family:Playfair Display;color:gold">Visit Our Studio</h2>
+<p style="font-weight:bold;color:gold">Chennai Branch</p>
+<p>Address: 1st Floor, No.148, Velachery Main Rd, Pallikaranai, Chennai, Tamil Nadu 600100</p>
+<p>Phone: 087783 87443</p>
+<p>Hours: Open · Closes 9 pm</p>
+
+<p style="margin-top:20px;font-weight:bold;color:gold">Andhra Pradesh Branch</p>
+<p>Address: 4-1-3, Malayavantham - Parnapalli Rd, Pulivendula, Andhra Pradesh 516390</p>
+<p>Phone: 087783 87443</p>
+<p>Hours: Open 9am to Closes 9 pm</p>
+</section>
+
+<section style="padding:60px 10%;background:#0f0f0f;">
+<h2 style="text-align:center;font-family:Playfair Display;color:gold;margin-bottom:30px">Our Locations</h2>
+<div style="display:flex;flex-wrap:wrap;gap:20px;">
+
+<div style="flex:1;min-width:300px;">
+<h3 style="text-align:center;color:gold">Chennai Branch</h3>
+<iframe src="https://www.google.com/maps?q=1st+Floor,+No.148,+Velachery+Main+Rd,+Pallikaranai,+Chennai,+Tamil+Nadu+600100&output=embed" width="100%" height="300" style="border:0;border-radius:15px;"></iframe>
+</div>
+
+<div style="flex:1;min-width:300px;">
+<h3 style="text-align:center;color:gold">Andhra Pradesh Branch</h3>
+<iframe src="https://www.google.com/maps?q=4-1-3,+Malayavantham+-+Parnapalli+Rd,+Pulivendula,+Andhra+Pradesh+516390&output=embed" width="100%" height="300" style="border:0;border-radius:15px;"></iframe>
+</div>
+
+</div>
+</section>
+
+<section style="padding:60px 10%;">
+<h2 style="text-align:center;font-family:Playfair Display;color:gold;margin-bottom:30px">Our Featured Videos</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;">
+<iframe src="https://www.youtube.com/embed/mEtGQOTrsU4" height="250" style="border-radius:15px"></iframe>
+<iframe src="https://www.youtube.com/embed/s4MvQWsEAs8" height="250" style="border-radius:15px"></iframe>
+<iframe src="https://www.youtube.com/embed/ZzehCKroCI0" height="250" style="border-radius:15px"></iframe>
+<iframe src="https://www.youtube.com/embed/fJaAYcERf3Y" height="250" style="border-radius:15px"></iframe>
+<iframe src="https://www.youtube.com/embed/Llss1aRo8tw" height="250" style="border-radius:15px"></iframe>
+<iframe src="https://www.youtube.com/embed/VqdCp9zpuYE?si=xUlH_w-BMDRaq2i5" height="250" style="border-radius:15px"></iframe>
+<iframe src="https://www.youtube.com/embed/VqdCp9zpuYE?si=xUlH_w-BMDRaq2i5" height="250" style="border-radius:15px"></iframe>
+<iframe src="https://www.youtube.com/embed/VqdCp9zpuYE?si=xUlH_w-BMDRaq2i5" height="250" style="border-radius:15px"></iframe>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 OM Wedding Studio | Designed for Luxury Experience</p>
+<section style="text-align:center;padding:40px;background:#0a0a0a;">
+<h2 style="font-family:Playfair Display;color:gold;margin-bottom:20px">Connect With Us</h2>
+<a href="https://www.instagram.com" style="margin:10px;color:white;font-size:18px;text-decoration:none;">📸 Instagram</a>
+<br>
+<a href="https://www.youtube.com/@omweddingstudio6764" style="margin:10px;color:white;font-size:18px;text-decoration:none;">▶ YouTube</a>
+</section>
+
+<footer>
+
+<script>
+gsap.from("h1",{y:-100,opacity:0,duration:1});
+gsap.from("p",{y:50,opacity:0,duration:1,delay:.5});
+</script>
+
+<a href="tel:918778387443" id="callBtn" style="
+position:fixed;
+bottom:100px;
+right:20px;
+background:#00c853;
+color:white;
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
+z-index:999;
+transition:0.4s;
+">
+📞
+</a>
+
+<a href="https://wa.me/918778387443?text=Hi%20OM%20Wedding%20Studio,%20I%20am%20interested%20in%20your%20wedding%20services" id="whatsappBtn" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;text-decoration:none;box-shadow:0 10px 25px rgba(0,0,0,0.5);z-index:999;opacity:0;transform:scale(0.5);transition:0.4s;" id="whatsappBtn">
+💬
+</a>
+
+
+
+<script>
+setTimeout(()=>{
+ document.getElementById('whatsappBtn').style.opacity='1';
+ document.getElementById('whatsappBtn').style.transform='scale(1)';
+},3000);
+
+setInterval(()=>{
+ let btn=document.getElementById('whatsappBtn');
+ btn.style.boxShadow='0 0 0 0 rgba(37,211,102,0.7)';
+ setTimeout(()=>{
+  btn.style.boxShadow='0 0 0 20px rgba(37,211,102,0)';
+ },500);
+},2000);
+</script>
+
+</body>
+<div id="loader">
+    <img src="image/ows logo.jpeg" alt="OM Wedding Studio Logo">
+</div>
+</html>

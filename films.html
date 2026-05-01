@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Films | OM Wedding Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#f6f5f3;
+color:#222;
+}
+
+/* NAVBAR (clean minimal) */
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 60px;
+background:#f6f5f3;
+z-index:1000;
+}
+
+.navbar a{
+text-decoration:none;
+color:#333;
+margin:0 15px;
+font-size:12px;
+letter-spacing:2px;
+}
+
+.navbar a:hover{
+opacity:0.6;
+}
+
+.nav-center img{
+width:50px;
+}
+
+/* PAGE TITLE */
+.header{
+text-align:center;
+padding:120px 20px 60px;
+}
+
+.header h1{
+font-family:'Playfair Display',serif;
+font-size:42px;
+letter-spacing:4px;
+}
+
+.header p{
+margin-top:10px;
+font-size:14px;
+opacity:0.6;
+}
+
+/* FILM SECTION */
+.film-section{
+max-width:1000px;
+margin:auto;
+padding:40px 20px;
+}
+
+/* VIDEO BLOCK */
+.film{
+margin-bottom:80px;
+}
+
+/* VIDEO */
+.film iframe{
+width:100%;
+height:520px;
+border:none;
+border-radius:6px;
+}
+
+/* TEXT */
+.film-info{
+margin-top:15px;
+}
+
+.film-info h3{
+font-family:'Playfair Display';
+font-size:20px;
+letter-spacing:1px;
+}
+
+.film-info p{
+font-size:13px;
+opacity:0.6;
+margin-top:5px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.navbar{padding:15px 20px;}
+.film iframe{height:220px;}
+.header{padding-top:100px;}
+}
+
+/* VIDEO WRAPPER */
+.video-wrap{
+position:relative;
+cursor:pointer;
+overflow:hidden;
+border-radius:6px;
+}
+
+.video-wrap iframe{
+pointer-events:none; /* disable click inside iframe */
+transition:0.4s;
+}
+
+/* HOVER EFFECT */
+.video-wrap:hover iframe{
+transform:scale(1.05);
+}
+
+/* PLAY ICON */
+.play-btn{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:rgba(0,0,0,0.6);
+color:#fff;
+padding:15px 20px;
+border-radius:50%;
+font-size:22px;
+opacity:0;
+transition:0.3s;
+}
+
+.video-wrap:hover .play-btn{
+opacity:1;
+}
+
+/* MODAL */
+.modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
+display:none;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
+
+.modal iframe{
+width:90%;
+height:80%;
+border:none;
+}
+
+.close-modal{
+position:absolute;
+top:20px;
+right:30px;
+color:#fff;
+font-size:30px;
+cursor:pointer;
+}
+</style>
+</head>
+<script>
+function openModal(videoId){
+  let modal = document.getElementById("videoModal");
+  let player = document.getElementById("modalVideo");
+
+  player.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+  modal.style.display = "flex";
+}
+
+function closeModal(){
+  let modal = document.getElementById("videoModal");
+  let player = document.getElementById("modalVideo");
+
+  player.src = "";
+  modal.style.display = "none";
+}
+</script>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div>
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="portfolio.html">PORTFOLIO +</a>
+  </div>
+
+  <div class="nav-center">
+    <a href="index.html">
+      <img src="image/ows logo.jpeg">
+    </a>
+  </div>
+
+  <div>
+    <a href="films.html">WEDDING FILMS</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<section class="header">
+<h1>WEDDING FILMS</h1>
+<p>Stories that move beyond moments</p>
+</section>
+
+<!-- FILMS -->
+<section class="film-section">
+ 
+  <div class="modal" id="videoModal">
+<span class="close-modal" onclick="closeModal()">✕</span>
+<iframe id="modalVideo" src=""></iframe>
+
+</div>
+
+<div class="film">
+<div class="video-wrap" onclick="openModal('mEtGQOTrsU4')">
+<iframe src="https://www.youtube.com/embed/VqdCp9zpuYE?mute=1&controls=0&enablejsapi=1"></iframe>
+<div class="play-btn">▶</div>
+<h3>Arun & Meena</h3>
+<p>Tamil Wedding Film · Chennai</p>
+</div>
+<div class="film">
+<div class="video-wrap" onclick="openModal('mEtGQOTrsU4')">
+<iframe src="https://www.youtube.com/embed/VqdCp9zpuYE?mute=1&controls=0&enablejsapi=1"></iframe>
+<div class="play-btn">▶</div>
+<h3>Karthik & Nisha</h3>
+<p>Pre Wedding Story</p>
+</div>
+<div class="film">
+<div class="video-wrap" onclick="openModal('mEtGQOTrsU4')">
+<iframe src="https://www.youtube.com/embed/VqdCp9zpuYE?mute=1&controls=0&enablejsapi=1"></iframe>
+<div class="play-btn">▶</div>
+<h3>Rahul & Divya</h3>
+<p>Grand Reception Highlights</p>
+</div>
+
+
+
+
+</section>
+
+<!-- YOUTUBE AUTO PAUSE SCRIPT -->
+<script>
+let players = [];
+
+// load API
+let tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+document.body.appendChild(tag);
+
+function onYouTubeIframeAPIReady() {
+  let iframes = document.querySelectorAll('iframe');
+
+  iframes.forEach((iframe, i) => {
+    players[i] = new YT.Player(iframe, {
+      events: {
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  });
+}
+
+function onPlayerStateChange(event) {
+  if (event.data === YT.PlayerState.PLAYING) {
+    players.forEach(player => {
+      if (player !== event.target) {
+        player.pauseVideo();
+      }
+    });
+  }
+}
+</script>
+
+</body>
+</html>
